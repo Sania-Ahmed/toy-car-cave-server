@@ -91,13 +91,11 @@ async function run() {
       const updatedToy = req.body;
       const toy = {
         $set: {
-          toy_name: updatedToy.toy_name,
-          sub_category: updatedToy.sub_category,
+    
           price: updatedToy.price,
-          rating: updatedToy.rating,
           quantity: updatedToy.quantity,
           details: updatedToy.details,
-          photo: updatedToy.photo
+        
         }
       }
 
