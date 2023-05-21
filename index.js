@@ -35,11 +35,6 @@ async function run() {
     const carCollection = database.collection("carCollection");
 
 
-    const indexKeys = {toy_name: 1};
-    const indexOptions = {name: 'toyName'};
-
-    const result = await carCollection.createIndex(indexKeys, indexOptions) ;
-
     app.get('/searched/:name', async (req ,res) => {
       const name = req.params.name ;
       console.log(name)
@@ -60,7 +55,7 @@ async function run() {
     })
 
     app.get('/allCars', async (req, res) => {
-      const result = await carCollection.find({}).toArray();
+      const result = await carCollection.find({}).limit(20).toArray();
       res.send(result);
     })
     
