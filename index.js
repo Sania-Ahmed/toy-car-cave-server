@@ -33,7 +33,7 @@ async function run() {
     const database = client.db("toyCarDB");
     const carCollection = database.collection("carCollection");
 
-
+    // CRUD started here
     app.get('/searched/:name', async (req ,res) => {
       const name = req.params.name ;
       console.log(name)
